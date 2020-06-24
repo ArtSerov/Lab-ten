@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WpfApp3">
+    <DataTemplate x:Key="studentDataTemplate" DataType="{x:Type local:Student}">
+        <Grid Margin="10,0,10,0" Background="#FFD6A9F4">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Name:"  Grid.Column="0" VerticalAlignment="Center" FontSize="16"/>
+            <TextBox Grid.Column="1" Text="{Binding Path=Name}" VerticalAlignment="Center" IsReadOnly="False"/>
+
+            <TextBlock Text="Surname:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="16"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Surname}" VerticalAlignment="Center" IsReadOnly="False"/>
+
+            <TextBlock Text="Direction:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" FontSize="16"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=Direction}" VerticalAlignment="Center" IsReadOnly="False"/>
+
+            <TextBlock Text="Course:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" FontSize="16"/>
+            <Slider Grid.Row="3" Grid.Column="1" Value="{Binding Path=Course}" VerticalAlignment="Center" Minimum="1" Maximum="4"
+                    TickPlacement="BottomRight" Width="250" HorizontalAlignment="Right"/>
+            <TextBlock Text="{Binding Path=Course}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>
